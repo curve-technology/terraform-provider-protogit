@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package messaging.domain1.v1;
+
+import "google/protobuf/timestamp.proto";
+import "shared/header/v1/header.proto";
+
+// Event1 is a message
+message Event1 {
+    // header
+    shared.header.v1.Header header = 1;
+    // field2
+    int32 field2 = 2;
+}

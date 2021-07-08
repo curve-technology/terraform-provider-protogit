@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package shared.header.v1;
+
+import "google/protobuf/timestamp.proto";
+import "shared/header/v1/header_sub1.proto";
+import "shared/header/v1/header_sub2.proto";
+
+// Header is a message
+message Header {
+    // field1
+    string field1 = 1;
+    // field2
+    string field2 = 2;
+    // field3
+    google.protobuf.Timestamp field3 = 3;
+    // field4
+    shared.header.v1.HeaderSub1 field4 = 4;
+    // field5
+    shared.header.v1.HeaderSub2 field5 = 5;
+}

@@ -18,7 +18,9 @@ variable "git_password" {
 provider "protogit" {
   url         = "github.com/curve-technology/terraform-provider-protogit"
   tag_version = "v0.1.0"
+  username    = ""
   password    = var.git_password
+  proto_path  = "/pkg/schemas/testdata/proto"
 }
 
 

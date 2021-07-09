@@ -75,6 +75,7 @@ terraform
 # Ignore tfvars
 terraform.tfvars
 
+.terraform.lock.hcl
 
 ### Custom ###
 

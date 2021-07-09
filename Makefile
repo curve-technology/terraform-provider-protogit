@@ -23,14 +23,14 @@ help: ## Show this help.
 
 .PHONY: build
 build: ## Build project and put output binary in /bin folder
-	@go build -o bin/${BINARY}_${VERSION}_darwin_amd64 cmd/${BINARY}/main.go
+	@go build -o bin/${BINARY}_${VERSION}_darwin_amd64 main.go
 
 
 .PHONY: release
 release: ## Build project for multiple target platforms
-	GOOS=darwin GOARCH=amd64 go build -o ./bin/${BINARY}_${VERSION}_darwin_amd64 cmd/${BINARY}/main.go
-	GOOS=linux GOARCH=386 go build -o ./bin/${BINARY}_${VERSION}_linux_386 cmd/${BINARY}/main.go
-	GOOS=linux GOARCH=amd64 go build -o ./bin/${BINARY}_${VERSION}_linux_amd64 cmd/${BINARY}/main.go
+	GOOS=darwin GOARCH=amd64 go build -o ./bin/${BINARY}_${VERSION}_darwin_amd64 main.go
+	GOOS=linux GOARCH=386 go build -o ./bin/${BINARY}_${VERSION}_linux_386 main.go
+	GOOS=linux GOARCH=amd64 go build -o ./bin/${BINARY}_${VERSION}_linux_amd64 main.go
 
 
 # .PHONY: install

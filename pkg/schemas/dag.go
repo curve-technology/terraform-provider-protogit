@@ -8,7 +8,6 @@ import (
 	"github.com/jhump/protoreflect/desc"
 	"github.com/jhump/protoreflect/desc/builder"
 	"github.com/jhump/protoreflect/desc/protoprint"
-	"google.golang.org/protobuf/types/descriptorpb"
 )
 
 type DAGsBuilder struct {

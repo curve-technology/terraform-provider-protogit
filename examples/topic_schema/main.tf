@@ -1,19 +1,17 @@
 terraform {
   required_providers {
     protogit = {
-      source = "curve-technology/protogit"
+      source  = "curve-technology/protogit"
       version = "~> 0.1.0"
     }
   }
 }
-
 
 variable "git_password" {
   description = "Git password"
   type        = string
   sensitive   = true
 }
-
 
 provider "protogit" {
   url         = "github.com/curve-technology/terraform-provider-protogit"
@@ -22,7 +20,6 @@ provider "protogit" {
   password    = var.git_password
   proto_path  = "/pkg/schemas/testdata/proto"
 }
-
 
 data "protogit_schemas" "schemas_collection" {
   entries {
@@ -37,7 +34,6 @@ data "protogit_schemas" "schemas_collection" {
     filepath = "messaging/domain2/v1/event1.proto"
   }
 }
-
 
 output "protogit_output" {
   value = data.protogit_schemas.schemas_collection

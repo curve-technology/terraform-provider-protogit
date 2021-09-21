@@ -99,7 +99,7 @@ func constructDAGRecursively(fileDescriptor *desc.FileDescriptor, nodes map[stri
 		return err
 	}
 
-	fileBuilder.SetOptions(&descriptorpb.FileOptions{})
+	// fileBuilder.SetOptions(&descriptorpb.FileOptions{})
 
 	fileDescriptor, err = fileBuilder.Build()
 	if err != nil {

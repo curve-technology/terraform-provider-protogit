@@ -72,6 +72,8 @@ override.tf.json
 terraform.rc
 terraform
 
+*.tfrc
+
 # Ignore tfvars
 terraform.tfvars
 

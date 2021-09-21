@@ -33,3 +33,11 @@ Finally, run the following commands to initialize the workspace and check the sa
 terraform init
 terraform plan
 ```
+
+## Development
+
+For development, you should first follow [these instructions](https://www.terraform.io/docs/cli/config/config-file.html#development-overrides-for-provider-developers) or just run the command below.
+
+```
+export TF_CLI_CONFIG_FILE=$(PWD)/dev.tfrc
+```

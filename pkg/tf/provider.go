@@ -21,8 +21,7 @@ func Provider() *schema.Provider {
 			},
 			"username": {
 				Type:     schema.TypeString,
-				Optional: true,
-				Default:  "gitlab-ci-token",
+				Required: true,
 			},
 			"password": {
 				Type:      schema.TypeString,
@@ -50,7 +49,12 @@ func providerConfigure(ctx context.Context, d *schema.ResourceData) (interface{}
 	password := d.Get("password").(string)
 	protoPath := d.Get("proto_path").(string)
 
-	fullURL := fmt.Sprintf("https://%s:%s@%s", username, password, url)
+	credentials := ""
+	if username != "" && password != "" {
+		credentials = fmt.Sprintf("%s:%s@", username, password)
+	}
+
+	fullURL := fmt.Sprintf("https://%s", credentials, url)
 
 	settings := Settings{URL: fullURL, TagVersion: tagVersion, ProtoPath: protoPath}
 

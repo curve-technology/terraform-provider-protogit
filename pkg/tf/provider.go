@@ -54,7 +54,7 @@ func providerConfigure(ctx context.Context, d *schema.ResourceData) (interface{}
 		credentials = fmt.Sprintf("%s:%s@", username, password)
 	}
 
-	fullURL := fmt.Sprintf("https://%s", credentials, url)
+	fullURL := fmt.Sprintf("https://%s%s", credentials, url)
 
 	settings := Settings{URL: fullURL, TagVersion: tagVersion, ProtoPath: protoPath}
 
